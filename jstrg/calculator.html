@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <script>
+            function operations(val)
+            {
+                document.getElementById("result").value += val
+            }
+            function calculate()
+            {
+                let cal = document.getElementById("result").value
+                let cal1 = eval(cal)
+                document.getElementById("result").value = cal1
+            }
+            function clearResult()
+            {
+                document.getElementById("result").value = " "
+            }
+        </script>
+    </head>
+    <body>
+        <form>
+           
+        <table border="3" class="container1">
+            <td colspan="4">
+                <input type="text" id="result" />
+            </td>
+            <tr>
+                <td>
+                    <input type="button" value="." onclick="operations('.')"/>
+                </td>
+                <td class="td">
+                    <input type="button" value="c" onclick="clearResult('c')"/>
+                </td>
+                <td class="td">
+                    <input type="button" value="%" onclick="operations('%')"/>
+                </td>
+                <td class="td">
+                    <input type="button" value="/" onclick="operations('/')"/>
+                </td>
+            </tr>
+            <tr>
+                <td class="td">
+                    <input type="button" value="7" onclick="operations('7')"/>
+                </td>
+                <td class="td">
+                    <input type="button" value="8" onclick="operations('8')"/>
+                </td>
+                <td class="td">
+                    <input type="button" value="9" onclick="operations('9')"/>
+                </td>
+                <td class="td">
+                    <input type="button" value="*" onclick="operations('*')"/>
+                </td>
+            </tr>
+            <tr>
+                <td class="td">
+                    <input type="button" value="4" onclick="operations('4')"/>
+                </td>
+                <td class="td">
+                    <input type="button" value="5" onclick="operations('5')"/>
+                </td>
+                <td class="td">
+                    <input type="button" value="6" onclick="operations('6')"/>
+                </td>
+                <td class="td">
+                    <input type="button" value="-" onclick="operations('-')"/>
+                </td>
+            </tr>
+            <tr>
+                <td class="td">
+                    <input type="button" value="1" onclick="operations('1')"/>
+                </td>
+                <td class="td">
+                    <input type="button" value="2" onclick="operations('2')"/>
+                </td>
+                <td class="td">
+                    <input type="button" value="3" onclick="operations('3')"/>
+                </td>
+                <td class="td">
+                    <input type="button" value="+" onclick="operations('+')"/>
+                </td> 
+            </tr>
+            <tr> 
+                <td></td>
+                <td class="td">
+                    <input type="button" value="0" onclick="operations('0')"/>
+                </td>
+                <td class="td">
+                    <input type="button" value="=" onclick="calculate('=')"/>
+                </td>
+                <td></td>
+            </tr>
+        </table>
+
+    </form>
+    </body>
+</html>
