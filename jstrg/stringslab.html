@@ -23,12 +23,24 @@
         }
 
         
-        function titleCase(){
-            // var str= "The James Bond series focuses on a fictional British Secret Service agent created in 1953 by writer Ian Fleming.";
+        // function upperCase(){
+        //     // var str= "The James Bond series focuses on a fictional British Secret Service agent created in 1953 by writer Ian Fleming.";
+        //     var str = document.getElementById("text").value;
+        //     document.getElementById("upper").innerText = str.toUpperCase();
+        //     console.log(str.toUpperCase());
+        //     }
+
+        function titleCase(str)
+        {
             var str = document.getElementById("text").value;
-            document.getElementById("titleCase").innerText = str.toUpperCase();
-            console.log(str.toUpperCase());
+            var string = str.toLowerCase().split(" ");
+            for(var i = 0; i< string.length; i++)
+            {
+            string[i] = string[i][0].toUpperCase() + string[i].slice(1);
             }
+            document.getElementById("titleCase").innerText = string.join(" ");
+            return string;
+        }
 
         function countVowels(str){
              var str = document.getElementById("text").value;
@@ -96,6 +108,8 @@
             <div>
             <button class="btns" onclick="countWords();">Count Words</button>
             <div id ="countWords"></div><br>
+            <button class="btns" onclick="upperCase();">Upper Case</button>
+            <div id ="upperCase"></div><br>
             <button class="btns" onclick="titleCase();">TitleCase</button>
             <div id ="titleCase"></div><br>
             <button class="btns" onclick="countVowels();">Vowels</button>
