@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" ></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" ></script>
+    
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <title> Exercise 1-Compare Date-1</title>
+<script>
+function compareDates(){
+    var date1 = new Date(document.getElementById('date1').value);
+    var date2 = new Date(document.getElementById('date2').value);
+    var result;
+
+    if(date1 > date2){
+        result = "<b>Date1</b> " + date1 + " <b>is greater than</b> " + "<b>Date2</b> " + date2;
+        document.getElementById("show").innerHTML = result
+        console.log("Date1 is greater than Date2");
+        
+    }
+    else if(date1 <= date2){
+        result = "<b>Date2</b> " + date2 + " <b>is greater than</b> " + "<b>Date1 </b>" + date1;
+        document.getElementById("show").innerHTML = result
+        console.log("Date2 is greater than Date1")
+    }
+    else{
+        result="Please select Dates"
+        document.getElementById("show").innerHTML = result
+    }
+    document.getElementById("show").innerHTML = result;
+
+}
+</script>
+</head>
+<body>
+    <h1>Compare 2 Date Parameters</h1>
+   
+    <table>
+        <tr>
+            <td>Enter 1st Date Parameter: </td>
+            <td><input type="date" id="date1"></td>
+            <br>
+        </tr>
+        <tr>
+            <td>Enter 2nd Date Parameter</td>
+            <td><input type="date" id="date2"></td>
+            <br>
+        </tr>
+    
+    </table>
+<div>
+    <input type="button" id="btn" class="btn btn-primary" style="margin-left: 5px;" value="Compare Dates" onclick="compareDates()"/>
+    <div id="show"></div><br>
+</div>
+ 
+    <br><br>
+    <br>
+    <div id="date1"></div>
+    <div id="date2"></div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title> Exercise 1-Compare Date 2</title>
+<script type = "text/javascript">
+window.onload = function(){
+  dt1 = new Date("2019-11-27 10:30:20");
+    dt2 = new Date("2020-06-28 10:20:10");
+    document.getElementById("showArray").innerHTML = 'Given Dates Are <br> ' +  dt1 +"<br>"+ dt2
+}
+    function dateDifference(dt1, dt2) 
+     {
+ 
+      var time =(dt2.getTime() - dt1.getTime()) / 1000;
+      var year  = Math.abs(Math.round((time/(60 * 60 * 24))/365.25));
+      var month = Math.abs(Math.round(time/(60 * 60 * 24 * 7 * 4)));
+      var days = Math.abs(Math.round(time/(3600 * 24)));
+      seconds = Math.floor(time/60*60)
+        minutes = Math.floor(time/60);
+      hours = Math.floor(minutes/60);
+      return + year + " Year <br>- "+ month + " Months <br> - "+ days +  " Days  <br>-"+ hours + " Hours <br> -"+minutes +" Minutes <br>-"+seconds+" seconds <br>";
+       
+     }
+ 
+    dt1 = new Date("2019-11-27 10:30:20");
+    dt2 = new Date("2020-06-28 10:20:10");
+ 
+    var dateDifference = dateDifference(dt1, dt2)
+    document.write( "Difference Between two given dates is <br>: " + dateDifference ); 
+ 
+  </script>  
+</head>
+<body>
+  <h3>Compare Dates In Year Month Days Hours Minutes Second</h3>
+  <p id="showArray"></p>
+</body>

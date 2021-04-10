@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <title>Exercise 3-Store Power of Array</title>
+    <script>
+        window.onload = function () {
+            var arr = [1, 2, 3, 4];
+            console.log('Array is: ' + arr);
+            document.getElementById("showArray").innerHTML = 'Given Array Is: ' + arr;
+        }
+
+
+        function power() {
+            var arr = [1, 2, 3, 4];
+            var arr1 = [];
+            var power = 1;
+            for (let i = 0; i < arr.length; i++) {
+                document.getElementById('show').innerText += arr[i] + ',';
+                arr1.push(Math.pow(arr[i], power));
+                power++;
+                // var index = arr[arr.length-1]; 
+                // console.log(index);
+                // document.getElementById('show').innerText += arr + ',';  
+            }
+            console.log(arr1);
+            document.getElementById("show").innerHTML = arr1
+
+        }
+    </script>
+</head>
+
+<body>
+
+    <div>
+        <div id="arr"></div>
+        <div id="arr1"></div>
+        <p id="showArray"></p>
+        <input type="button" class="btn btn-primary" style="margin-left: 5px;" value="Calculate Power" onclick="power()" /><br><br>
+        <div id="show"></div>
+    </div>
+</body>
+
+</html>

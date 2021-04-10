@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <title>Exercise 4-Descriptive Date Format</title>
+<script>
+// var date1 = new Date();
+// document.write(date1)
+function convertDate()
+{
+   
+    var dateFormat = { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric'};
+    var date  =  new Date(document.getElementById('date').value);
+    console.log(date.getDay());
+    var showDate = date.toLocaleDateString("en-US", dateFormat);
+    console.log(showDate);
+    document.getElementById('show').innerHTML = showDate;
+}
+
+</script>
+</head>
+<body>
+    <h2>Convert Date in Descriptive Manner</h2>
+    <table>
+        <tr>
+            <td>Enter Date : </td>
+            <td><input type="date" id="date"></td>
+            <br>
+        </tr>
+    
+  
+    </table>
+    <div>
+        <input type="button" class="btn btn-primary" style="margin-left: 5px;" id="btn" value="Convert Date" onclick="convertDate()"/>
+        <div id="show"></div>
+    </div>
+
+    <div id="date"></div>
+</body>
+</html>

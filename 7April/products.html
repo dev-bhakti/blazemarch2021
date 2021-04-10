@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products List</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    
+    <!-- <link rel="stylesheet" href="./products.css"> -->
+    <script src="./products.js"></script>
+</head>
+
+<body onload="init()">
+    <div class="container">
+        <header class="headbar top"><h1>Products</h1></header>
+        
+            <div>
+                
+                <fieldset>
+                    <label for="pid"><span>Product Id</span></label>
+                    <input type="text"  placeholder="enter product Id" id="pid">
+                    <br>
+
+                    <label for="pname"><span>Product Name</span></label>
+                    <input type="text" placeholder="enter product name" id="pname">
+                    <br>
+
+                    <label for="cname"><span>Category Name</span></label>
+                    <select id="cname">
+                        <option value="ECT">ECT</option>
+                        <option value="ECL">ECL</option>
+                        <option value="FOD-FAST">FOD-FAST</option>
+                        <option value="FOD_DARK">FOD_DARK</option>  
+                    </select>
+                    <br>
+    
+                    <label for="manu"><span>Manufacturer</span></label>
+                    <select id="manu">
+                        <option value="HP">HP</option>
+                        <option value="IBM">IBM</option>
+                        <option value="TATA">TATA</option>
+                        <option value="BAJAJ">BAJAJ</option>
+                        <option value="PARLE">PARLE</option>
+                    </select>
+                    <br>
+
+                    <label for="des"><span>Description</span></label>
+                    <input type="text" placeholder="enter Description" id="des">
+                    <br>
+
+                    <label for="price"><span>Price</span></label>
+                    <input type="number" placeholder="enter Price" id="price">
+                    <br>
+
+                    <label for="submit">&nbsp;</label>
+                      <br>
+                    <!-- Enter data in the input fields and click on save, data will be added to 
+                        table and localStorage -->
+                    <button id="submit" class="btn btn-success" onclick="Save()">Save</button>
+
+                    <!--When you click on clear button, the data will be cleared in the input fields -->
+                    <button id="clear"  class="btn btn-warning" onclick="Clear()">Clear</button>
+                    <br>
+
+                    <!-- For search, you have to enter product id, it will search the data by product id -->
+                    <label for="search"><span>Search</span></label>
+                    <input type="text" name="" style="margin-left: 100px;" id="myInput" placeholder="Search" onkeyup="search()"><br><br>
+                </fieldset>
+            </div>
+        
+       
+
+        <aside class="rightbar">
+            <table id="prodtable" border="2">
+                <thead>
+                    
+
+                    <tr>
+                        <th>Product ID</th>
+                        <th>Product Name</th>
+                        <th>Category Name</th>
+                        <th>Manufacturer</th>
+                        <th>Description</th>
+                        <th>Price</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="tablerows">
+
+                </tbody>
+            </table>
+        </aside>
+        <footer class="headerbar bottom"></footer>
+    </div>
+</body>
+</html>

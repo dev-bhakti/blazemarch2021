@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Employee Details</title>
+
+    <!-- <script src="emp.js"></script> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <style>
+        tr {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div>
+            <h2>Employee Details</h2>
+            <label>Employee No. : </label><br>
+            <input type="number" name="eno" id="eno"><br><br>
+        </div>
+        <div>
+            <label> Employee Name : </label><br>
+            <input type="text" name="ename" id="ename"><br><br>
+        </div>
+        <div>
+            <label> Department : </label><br>
+            <select type="text" name="edept" id="edept" style="width: 180px;">
+                <option value="IT">IT</option>
+                <option value="HR">HR</option>
+                <option value="SALES">SALES</option>
+                <option value="TRAINING">TRAINING</option>
+            </select><br><br>
+        </div>
+        <div>
+            <label> Salary : </label><br>
+            <input type="number" name="esal" id="esal"><br><br>
+        </div>
+         <!-- enter the data in input fields and click on add-It will save data in table -->
+        <button onclick="addRow();" class="btn btn-success">Add</button>
+
+        <!-- The previous entered data is cleared when clicked on clear button -->
+        <button onclick="clear();" id="clr" class="btn btn-secondary">Clear</button>
+        
+        <!-- Click on row in table which you want to edit then that selected row
+        data will pop in input fields and then edit data and click on edit button -->
+        <button id="edit" onclick="editRow();" class="btn btn-info">Edit</button>
+        
+        <!-- Click on row in table which you want to delete then that selected row
+        data will pop in input fields and then click on delete button -->
+        <button onclick="rowDelete();" id="del" class="btn btn-danger">Delete</button>
+        <br><br>
+        
+        <!-- search data by employee no. -->
+        <label>Search :</label> <input type="text" name="" id="myInput" placeholder="Search" onkeyup="searchFun()"><br><br>
+
+
+       <div class="tab tab-1">
+            <table border="2" id="table">
+                <tr>
+                    <th style="width: 25px;">Employee No.</th>
+                    <th style="width: 25px;"> Employee Name</th>
+                    <th style="width: 25px;">Department</th>
+                    <th style="width: 25px;">Salary</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Sandy</td>
+                    <td>IT</td>
+                    <td>10000</td>
+
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>John</td>
+                    <td>HR</td>
+                    <td>20000</td>
+
+                </tr>
+            </table>
+        </div>
+
+    </div><br><br>
+
+    <script>
+        var arr = [{ 'eno': 1, 'ename': "A", 'edept': "IT", 'esal': "10" }]
+        window.onload = function () {
+            document.getElementById('clr').addEventListener('click', clear, false);
+
+        }
+        var table = document.getElementById("table"), rIndex;
+        var rIndex,
+            table = document.getElementById("table");
+
+        //check if input is empty
+        function empty() {
+            var isEmpty = false,
+                eno = document.getElementById("eno").value,
+                ename = document.getElementById("ename").value,
+                edept = document.getElementById("edept").value,
+                esal = document.getElementById("esal").value;
+
+            if (eno === "") {
+                console.log("Employee no. is Mandatory");
+                alert("Employee no. is Mandatory");
+                isEmpty = true;
+            }
+            if (eno < 0) {
+                console.log("Employee Name can't be Negative");
+                alert("Employee Name can't be Negative");
+                isEmpty = true;
+            }
+            if (ename === "") {
+                console.log("Employee Name is Mandatory");
+                alert("Employee Name is Mandatory");
+                isEmpty = true;
+            }
+
+            if (edept === "") {
+                console.log("Employee Department can't be Empty");
+                alert("Employee Department can't be Empty");
+                isEmpty = true;
+            }
+            if (esal === "") {
+                console.log("Employee Salary can't be Empty");
+                alert("Employee Salary can't be Empty");
+                isEmpty = true;
+            }
+            if (esal < 0) {
+                console.log("Employee Salary can't be negative");
+                alert("Employee Salary can't be negative");
+                isEmpty = true;
+            }
+            return isEmpty;
+        }
+
+        //add row
+        function addRow() {
+
+            if (!empty()) {
+
+                var table = document.getElementById("table"),
+                    // if(!empty()){ 
+                    newRow = table.insertRow(table.length),
+
+                    //create new row and cell
+                    r1 = newRow.insertCell(0),
+                    r2 = newRow.insertCell(1),
+                    r3 = newRow.insertCell(2),
+                    r4 = newRow.insertCell(3),
+
+
+                    //get val from input text
+                    eno = document.getElementById("eno").value,
+                    ename = document.getElementById("ename").value,
+                    edept = document.getElementById("edept").value,
+                    esal = document.getElementById("esal").value;
+
+                //set val into row, cells
+                r1.innerHTML = eno;
+                r2.innerHTML = ename;
+                r3.innerHTML = edept;
+                r4.innerHTML = esal;
+
+                //call fun to set event to new row
+                selectedRow();
+
+            }
+        }
+
+        function selectedRow() {
+
+
+            for (var i = 1; i < table.rows.length; i++) {
+                table.rows[i].onclick = function () {
+
+                    rIndex = this.rowIndex;
+                    //    console.log(rIndex);
+                    document.getElementById("eno").value = this.cells[0].innerHTML;
+                    document.getElementById("ename").value = this.cells[1].innerHTML;
+                    document.getElementById("edept").value = this.cells[2].innerHTML;
+                    document.getElementById("esal").value = this.cells[3].innerHTML;
+
+                };
+            }
+        }
+        selectedRow();
+        function editRow() {
+            var eno = document.getElementById("eno").value,
+                ename = document.getElementById("ename").value,
+                edept = document.getElementById("edept").value,
+                esal = document.getElementById("esal").value;
+
+            table.rows[rIndex].cells[0].innerHTML = eno;
+            table.rows[rIndex].cells[1].innerHTML = ename;
+            table.rows[rIndex].cells[2].innerHTML = edept;
+            table.rows[rIndex].cells[3].innerHTML = esal;
+
+        }
+
+        function rowDelete() {
+            table.deleteRow(rIndex);
+        }
+
+        function clear() {
+            var inputs = document.getElementsByTagName('input');
+            for (var i = 0; i < inputs.length; i++) {
+                inputs[i].value = "";
+            }
+
+            // document.getElementById('eno').value ="";
+        }
+
+        function searchFun() {
+            var filter = document.getElementById('myInput').value.toUpperCase();
+            var table = document.getElementById('table');
+            var rows = table.getElementsByTagName('tr');
+
+            for (var i = 1; i < table.rows.length; i++) {
+                var td = rows[i].getElementsByTagName('td')[0];
+                if (td) {
+                    let textValue = td.textContent || td.innerHTML;
+                    if (textValue.toUpperCase().indexOf(filter) > -1) {
+                        rows[i].style.display = "";
+                    } else {
+                        rows[i].style.display = "none";
+                    }
+                }
+
+            }
+        }
+    </script>
+</body>
+
+</html>

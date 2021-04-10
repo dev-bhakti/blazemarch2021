@@ -1,0 +1,64 @@
+body{
+    margin: 0;
+    font-family: sans-serif;
+}
+
+header,footer,aside{
+    display: block;
+}
+
+h1{
+    color: white;
+    text-align: center;
+}
+
+label{
+    display: block;
+}
+
+fieldset{
+border: 0px dotted red;
+width: 400px;
+margin: 0 auto;
+}
+
+input,select{
+    width: 400px;
+    height: 30px;
+    border-radius: 5px;
+    padding-left: 10px;
+    font-size: 14px;
+}
+
+select{
+    line-height: 30px;
+    background: #f4f4f4;
+}
+
+button{
+    font-size: 14px;
+    padding-left: 5px;
+    border-radius: 2px;
+    background:grey;
+    color: #ffffff;
+    float: right;
+    width: 100px;
+    margin-left: 10px;
+    height: 25px;
+    margin-right: 9px;
+    margin-bottom: 1px;
+}
+
+table{
+    border-collapse: collapse;
+    margin: 0 auto;
+}
+
+/*  */
+element.style {
+    margin-left: 166px;
+}
+
+element.style {
+    margin-left: 166px;
+}

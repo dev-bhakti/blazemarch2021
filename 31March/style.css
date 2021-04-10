@@ -1,22 +1,5 @@
-/* css for stringslab.html */
-.txt{
-    width: 50%;
-    height: 30px;
-}
-
-.btns{
-    position: relative;
-    display: inline-block;
-    padding: 8px 20px;
-    margin: 10px 0;
-    color: #fff;
-    border-radius: 10px;
-    background:grey;
-    font-size: initial; 
-}
-
 /* css for calculator */
-.btn1{
+/* .btn1{
     position: relative;
     display: inline-block;
     padding: -1px ;
@@ -25,11 +8,9 @@
     border-radius: 10px;
     background:orange;
     font-size: initial;
-}
+} */
 .td {
-    background: repeating-linear-gradient(
-45deg
-, black, transparent 100px);
+    background: repeating-linear-gradient(45deg, black, transparent 100px);
 }
 .container1{ 
     width: 280px;
@@ -45,7 +26,7 @@
 }
 input[type="button"] {
     height: 43px;
-    width: 70px;
+    width: 120px;
     font: inherit;
     font-size: x-large;
 }
@@ -55,3 +36,4 @@ input[type="text" i] {
     height:91%;
     padding-bottom: 5px;
 }
+

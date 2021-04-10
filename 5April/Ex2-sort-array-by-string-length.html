@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Exercise 2-Sort Array</title>
+    <script>
+        window.onload = function()
+        {
+            namesArray=["Bhakti", "Aisha", "Sid","John","Cindrella"];
+            console.log('Array is: ' +  namesArray);
+            document.getElementById("showArray").innerHTML = 'Given Array is : ' +  namesArray
+            function sortByLength(namesArray)
+            {
+             return namesArray.sort((a,b)=> a.length - b.length);
+            }  
+    console.log(sortByLength(namesArray));
+    document.getElementById('arr1').innerHTML = 'Sort Array By String Length : '+ sortByLength(namesArray);
+    }
+    </script>
+</head>
+<body>
+    <h1>Sort Array By String Length</h1>
+        <p id="showArray"></p>
+    <h2 id="arr1"> </h2><br>
+    
+</body>
+</html>

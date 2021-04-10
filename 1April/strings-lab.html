@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="style.css">
+        <title>Strings Lab</title>
+        <link rel="stylesheet" href="strings-lab.css">
         <script>
             window.onload = function(){
             var str= "The James Bond series focuses on a fictional British Secret Service agent created in 1953 by writer Ian Fleming, who featured him in twelve novels and two short-story collections. Since Fleming's death in 1964, eight other authors have written authorised Bond novels or novelisations: Kingsley Amis, Christopher Wood, John Gardner, Raymond Benson, Sebastian Faulks, Jeffery Deaver, William Boyd and Anthony Horowitz. The latest novel is Forever and a Day by Anthony Horowitz, published in May 2018. Additionally Charlie Higson wrote a series on a young James Bond, and Kate Westbrook wrote three novels based on the diaries of a recurring series character, Moneypenny.The character—also known by the code number 007 (pronounced double-O-seven)—has also been adapted for television, radio, comic strip, video games and film. The films are the longest continually running film series of all time and have grossed over US$7.04 billion in total, making it the sixth-highest-grossing film series to date, which started in 1962 with Dr. No, starring Sean Connery as Bond. As of 2021, there have been twenty-four films in the Eon Productions series. The most recent Bond film, Spectre (2015), stars Daniel Craig in his fourth portrayal of Bond; he is the sixth actor to play Bond in the Eon series. There have also been two independent productions of Bond films: Casino Royale (a 1967 spoof starring David Niven) and Never Say Never Again (a 1983 remake of an earlier Eon-produced film, 1965s Thunderball, both starring Connery). In 2015 the series was estimated to be worth $19.9 billion,[1] making James Bond one of the highest-grossing media franchises of all time.";
-            console.log(str.length);
+            console.log('Total characters : '+str.length);
             document.getElementById("totaltext").innerText = str; 
             }
 
@@ -24,14 +25,16 @@
 
         
         // function upperCase(){
-        //     // var str= "The James Bond series focuses on a fictional British Secret Service agent created in 1953 by writer Ian Fleming.";
+        //     var str= "The James Bond series focuses on a fictional British Secret Service agent created in 1953 by writer Ian Fleming.";
         //     var str = document.getElementById("text").value;
-        //     document.getElementById("upper").innerText = str.toUpperCase();
+        //     document.getElementById("upperCase").innerText = str.toUpperCase();
         //     console.log(str.toUpperCase());
-        //     }
-
+               
+        // }
+            
         function titleCase(str)
         {
+
             var str = document.getElementById("text").value;
             var string = str.toLowerCase().split(" ");
             for(var i = 0; i< string.length; i++)
@@ -41,6 +44,7 @@
             document.getElementById("titleCase").innerText = string.join(" ");
             return string;
         }
+
 
         function countVowels(str){
              var str = document.getElementById("text").value;
@@ -83,9 +87,9 @@
         function countStatements(str){
             var str = document.getElementById("text").value;
             var count =0;
-            var s = ".";
+            var sent = ".";
             for(var i=0; i<str.length;i++){
-                if(s.indexOf(str[i])> -1){
+                if(sent.indexOf(str[i])> -1){
                     count++;
                 }
             }
@@ -100,7 +104,10 @@
         <h1>Lab On String</h1>
         <div id="totaltext"></div>
         <br>
+        <hr>
+        <br>
         <div>
+            <label>Enter your text here: </label>
             <input type="text" id="text" class="txt">
         </div>
         <br>
@@ -108,8 +115,8 @@
             <div>
             <button class="btns" onclick="countWords();">Count Words</button>
             <div id ="countWords"></div><br>
-            <button class="btns" onclick="upperCase();">Upper Case</button>
-            <div id ="upperCase"></div><br>
+            <!-- <button class="btns" onclick="upperCase();">Upper Case</button>
+            <div id ="upperCase"></div><br> -->
             <button class="btns" onclick="titleCase();">TitleCase</button>
             <div id ="titleCase"></div><br>
             <button class="btns" onclick="countVowels();">Vowels</button>
