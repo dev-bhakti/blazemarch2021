@@ -14,7 +14,7 @@ function show(data) {
     let tab =
         `<tr>
         <th class="header">Product Row Id</th>
-          <th class="header">Product Id</th>
+          <th class="header">Product Id</th
           <th class="header">Product Name</th>
           <th class="header">Category Name</th>
           <th class="header">Manufacturer</th>
@@ -33,8 +33,8 @@ function show(data) {
     <td>${r.Manufacturer}</td>     
     <td>${r.Description}</td>     
     <td>${r.BasePrice}</td>     
-    <td>'<input type="button" class="btn btn-danger" onclick="delete_data(${r.ProductRowId})" value="DELETE"><br>
-    <input type="button" class="btn-info" onclick="put_data(${r.ProductRowId})" value="PUT">'</td>
+    <td><input type="button" class="btn btn-danger" onclick="delete_data(${r.ProductRowId})" value="DELETE"><br>
+    <input type="button" class="btn-info" onclick="put_data(${r.ProductRowId})" value="PUT"></td>
 </tr>`;
 
     }
