@@ -43,7 +43,7 @@ function show(data) {
     <td>${r.Manufacturer}</td>     
     <td>${r.Description}</td>     
     <td>${r.BasePrice}</td>     
-    <td>'<input type="button" class="btn btn-danger" onclick="delete_data( '+r.ProductId+' )" value="DELETE">'</td>
+    <td>'<input type="button" class="btn btn-danger" onclick="delete_data( '+r.ProductRowId+' )" value="DELETE">'</td>
 </tr>`;
 
     }
