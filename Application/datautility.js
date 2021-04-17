@@ -63,9 +63,6 @@ function delete_data(ProductRowId) {
         ProductId: document.getElementById('ProductId').value
     };
     console.log('Deleting Item...');
-    // fetch('https://apiapptrainingnewapp.azurewebsites.net/api/Products/{{prd.ProductId}}', {
-    // fetch(`https://apiapptrainingnewapp.azurewebsites.net/api/Products/${ProductRowId}`, {
-    // fetch('https://apiapptrainingnewapp.azurewebsites.net/api/Products/402', {
         fetch(`https://apiapptrainingnewapp.azurewebsites.net/api/Products/${ProductRowId}`, {
         method: 'DELETE'
 
