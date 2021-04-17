@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./../../node_modules/bootstrap/dist/css/bootstrap.min.css">
+
+    <title>Document</title>
+        <style>
+        th,
+        td,
+        p,
+        input,
+        h3 {
+            font: 15px 'Segoe UI';
+        }
+
+        table,
+        th,
+        td {
+            border: solid 1px #ddd;
+            border-collapse: collapse;
+            padding: 2px 3px;
+            text-align: center;
+        }
+
+        th {
+            font-weight: bold;
+        }
+    </style>
+    <script src="./../build/productlist.build.js">
+
+    </script>
+</head>
+
+<body>
+    <h3>
+        Product Information
+    </h3>
+
+    <label>Search</label>
+   
+    <input type="text" id="myInput" style="margin-top: 5px;margin-left: 5px;margin-bottom: 5px;">
+    <button onclick="searchFun();">Search</button>
+    <br>
+    <p style="margin-left: 10px;" id='showTable'></p>
+
+    <button onclick='createTable()' value='Load Table' /> Load Table</button>
+    <button onclick="remove();">Delete Duplicate</button>
+    <button onclick="groupBy();">Group By</button>
+    <select id="filterOnValue" >
+        <option value="Category">Category</option>
+        <option value="Manufacturer">Manufacturer</option>    
+    </select>
+    <div id="showTable"></div> 
+</body>
+
+</html>

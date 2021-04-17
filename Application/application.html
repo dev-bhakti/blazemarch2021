@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script src="./application1.js"></script> -->
+    <script src="./validate.js"></script>
+    <script src="./datautility.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="./../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <style>
+    .header{
+        position:sticky;
+        top: 0 ;
+        background-color: grey;
+    }
+ 
+    
+    </style>
+    
+</head>
+
+
+<body>
+    <h1>Product Management App with ES 6</h1>
+    <div class="container">
+        <form id="form" method="post" >
+            <div class="form-group">
+                <label> Product ID </label>
+                <input type="text"  class="form-control" id="ProductId" value="Prd-">
+            </div>
+            <div class="form-group">
+                <label> Product Name </label>
+                <input type="text" class="form-control" id="ProductName" >
+                <b id="err"></b>
+            </div>
+            <div class="form-group">
+            <label> Category Name </label>
+            
+            <select id="Category" class="form-control">
+                <option value="Electrical"  >Electrical</option>
+                <option value="Electronic">Electronic</option>
+                <option value="Food">Food</option>
+            </select>
+            </div>
+            <div class="form-group">
+            <label> Manufacturer </label>
+            <select id="Manufacturer" class="form-control">
+                <option value="IBM">IBM</option>
+                <option value="BAJAJ">BAJAJ</option>
+                <option value="PARLE">PARLE</option>
+            </select>
+            </div>
+            <div class="form-group">
+                <label> Description </label>
+                <input type="text" id="Description" class="form-control">
+            </div>
+            <div class="form-group">
+                <label> Base Price </label>
+                <input type="text" id="BasePrice" class="form-control">
+            </div>
+            <div class="form-group">
+                <input type="submit" value="POST" class="btn btn-success">
+                <input type="button" value="GET" class="btn btn-info" onclick="getapi()">
+                <!-- <input type="button" value="DELETE" class="btn btn-danger" onclick="delete_data(ProductId)"> -->
+            </div>
+
+        </form>
+    </div>
+    <br>
+    <h2 style="margin-left: 30px;">Product List</h2>
+    <div style="height: 400px !important; overflow: scroll; ">
+        <table class="table  table-bordered table-hover" style="margin-left: 30px;" id="products">
+            
+        </table>
+    </div>
+
+</body>
+<script>
+
+
+    
+  var form =document.getElementById('form')
+  form.addEventListener('submit',function(e){
+      e.preventDefault();
+      let prd = {
+      ProductId: document.getElementById('ProductId').value,
+      ProductName:  document.getElementById('ProductName').value,
+      CategoryName: document.getElementById('Category').value,
+      Manufacturer: document.getElementById('Manufacturer').value,
+      Description: document.getElementById('Description').value,
+      BasePrice:  document.getElementById('BasePrice').value
+  };
+  GetUser();
+      var ProductId = document.getElementById('ProductId').value
+      var ProductName = document.getElementById('ProductName').value
+      var Category = document.getElementById('Category').value
+      var Manufacturer = document.getElementById('Manufacturer').value
+      var Description = document.getElementById('Description').value
+      var BasePrice = document.getElementById('BasePrice').value
+
+      fetch("https://apiapptrainingnewapp.azurewebsites.net/api/Products",{
+          method:'POST',
+          body: JSON.stringify(prd),
+          headers:{
+          'Content-Type':'application/json'
+      }
+      })
+  
+      .then(function(response){
+          return response.json()
+      })
+      .then(function(data){
+          console.log(data);
+      })
+     
+  })
+</script>
+
+</html>

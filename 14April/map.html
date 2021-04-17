@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <title>Document</title>
+    <script src="./map.js"></script>
+</head>
+
+<body>
+    <h2>Lab on Map</h2>
+    <form>
+        <div class="form-group col-md-6">
+        <label>Category ID</label>
+        <input type="text" id="cid"><br><br>
+        </div>
+        <div class="form-group col-md-6">
+        <label>Category Name</label>
+        <select id="cname" style="width: 153px;height: 30px;">
+            <option value="ECL">ECL</option>
+            <option value="ECT">ECT</option>
+            <option value="FOOD">FOOD</option>
+        </select>
+        </div>
+        <div class="form-group col-md-6">
+        <label>Product ID</label>
+        <input type="text" id="pid"><br><br>
+        </div>
+        <div class="form-group col-md-6">
+        <label>Product Name</label>
+        <input type="text" id="pname">
+        </div>
+    </form>
+    <button class="btn btn-success" style="margin-left: 10px; margin-top: 10px;" onclick="add()">Save</button>
+    <button class="btn btn-info" style="margin-left: 10px;margin-top: 10px;" onclick="clear();" id="clr">Clear</button>
+
+    <h2>Category List</h2>
+    <table id="table1" border="1" style="margin-left:10px">
+        <tbody>
+
+            <tr>
+                <th>Category ID</th>
+                <th>Category Name</th>
+            </tr>
+            <tr>
+
+            </tr>
+        </tbody>
+    </table>
+    <br><br><br>
+    <h2>Products List</h2>
+    <table id="table2" border="1" style="margin-left:10px">
+        <tbody>
+            <tr>
+                <th>Product ID</th>
+                <th>Product Name</th>
+            </tr>
+            <tr>
+
+            </tr>
+        </tbody>
+    </table>
+</body>
+<script>
+    window.onload = function () {
+        document.getElementById('clr').addEventListener('click', clear, false);
+
+    }
+    function clear() {
+        var inputs = document.getElementsByTagName('input');
+        for (var i = 0; i < inputs.length; i++) {
+            inputs[i].value = "";
+        }
+
+        // document.getElementById('eno').value ="";
+    }
+</script>
+
+</html>
