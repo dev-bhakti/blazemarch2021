@@ -33,7 +33,8 @@ function show(data) {
     <td>${r.Manufacturer}</td>     
     <td>${r.Description}</td>     
     <td>${r.BasePrice}</td>     
-    <td>'<input type="button" class="btn btn-danger" onclick="delete_data(${r.ProductRowId})" value="DELETE">'</td>
+    <td>'<input type="button" class="btn btn-danger" onclick="delete_data(${r.ProductRowId})" value="DELETE"><br>
+    <input type="button" class="btn-info" onclick="put_data(${r.ProductRowId})" value="PUT">'</td>
 </tr>`;
 
     }
@@ -70,5 +71,15 @@ function delete_data(ProductRowId) {
     })
     console.log(prd);
     console.log('Item Deleted..Click on GET to check');
+
+}
+
+function put_data(ProductRowId) {
+ 
+        fetch(`https://apiapptrainingnewapp.azurewebsites.net/api/Products/${ProductRowId}`, {
+        method: 'PUT'
+
+
+    })
 
 }
