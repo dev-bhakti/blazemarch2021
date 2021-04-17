@@ -1,30 +1,19 @@
-
-// GET api url
 const get_url = "https://apiapptrainingnewapp.azurewebsites.net/api/Products";
-  
-// Defining async function
-async function getapi() {   
-    // Storing response
-    const response = await fetch(get_url); 
-    // Storing data in form of JSON
+
+async function getapi() {
+    const response = await fetch(get_url);
     var data = await response.json();
     console.log(data);
-    // if (response) {
-        
-    //     console.log('storing data');
-        
-
-    // }
     show(data);
     cssApply(data);
-  
+
 }
 getapi();
 
-// Function to define innerHTML for HTML table
 function show(data) {
-    let tab = 
+    let tab =
         `<tr>
+        <th class="header">Product Row Id</th>
           <th class="header">Product Id</th>
           <th class="header">Product Name</th>
           <th class="header">Category Name</th>
@@ -33,13 +22,14 @@ function show(data) {
           <th class="header">BasePrice</th>
           <th class="header">Action</th>
          </tr>`;
-    
+
     // Loop to access all rows 
     for (let r of data) {
         tab += `<tr id="MyElement"> 
+    <td>${r.ProductRowId}</td>
     <td>${r.ProductId}</td>
     <td>${r.ProductName}</td>
-    <td>${r.CategoryName}</td> 
+    <td class="td">${r.CategoryName}</td> 
     <td>${r.Manufacturer}</td>     
     <td>${r.Description}</td>     
     <td>${r.BasePrice}</td>     
@@ -50,25 +40,25 @@ function show(data) {
     document.getElementById("products").innerHTML = tab;
 }
 
-function cssApply(data){
-    for(let r of data){
-        if(r.CategoryName == 'Electronics'){
+function cssApply(data) {
+    for (let r of data) {
+        if (r.CategoryName === 'Electronics') {
             console.log(r.CategoryName);
-            document.getElementById("MyElement").classList.add('table-danger');
-        }else if(r.CategoryName == 'Electrical'){
+            document.getElementsByClassName("td").classList.add('table-danger');
+        } else if (r.CategoryName === 'Electrical') {
             console.log(r.CategoryName);
-            document.getElementById("MyElement").classList.add('table-primary');
-        }else if(r.CategoryName == 'Food'){
+            document.getElementsByClassName("td").classList.add('table-primary');
+        } else if (r.CategoryName === 'Food') {
             console.log(r.CategoryName);
-            document.getElementById("MyElement").classList.add('table-warning');
+            document.getElementsByClassName("td").classList.add('table-warning');
         }
     }
 
 }
-    
 
 
-function delete_data(ProductId) {
+
+function delete_data() {
     let prd = {
         ProductId: document.getElementById('ProductId').value
     };
