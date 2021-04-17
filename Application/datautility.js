@@ -33,7 +33,7 @@ function show(data) {
     <td>${r.Manufacturer}</td>     
     <td>${r.Description}</td>     
     <td>${r.BasePrice}</td>     
-    <td>'<input type="button" class="btn btn-danger" onclick="delete_data( '+r.ProductRowId+' )" value="DELETE">'</td>
+    <td>'<input type="button" class="btn btn-danger" onclick="delete_data(${r.ProductRowId})" value="DELETE">'</td>
 </tr>`;
 
     }
@@ -58,7 +58,7 @@ function cssApply(data) {
 
 
 
-function delete_data() {
+function delete_data(ProductRowId) {
     let prd = {
         ProductId: document.getElementById('ProductId').value
     };
@@ -66,14 +66,9 @@ function delete_data() {
     // fetch('https://apiapptrainingnewapp.azurewebsites.net/api/Products/{{prd.ProductId}}', {
     // fetch(`https://apiapptrainingnewapp.azurewebsites.net/api/Products/${ProductRowId}`, {
     // fetch('https://apiapptrainingnewapp.azurewebsites.net/api/Products/402', {
-        fetch('https://apiapptrainingnewapp.azurewebsites.net/api/Products/:ProductRowId', {
-        method: 'DELETE',
-        body: null,
-        headers: {
-            'Content-Type': 'application/json',
-            'Access-Control-Allow-Origin': '*',
-           'Access-Control-Allow-Origin':'http://127.0.0.1:5501/' 
-        },
+        fetch(`https://apiapptrainingnewapp.azurewebsites.net/api/Products/${ProductRowId}`, {
+        method: 'DELETE'
+
 
     })
     console.log(prd);
