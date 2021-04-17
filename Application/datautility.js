@@ -68,24 +68,25 @@ function cssApply(data){
     
 
 
-function  delete_data(ProductId)
-{
+function delete_data(ProductId) {
     let prd = {
         ProductId: document.getElementById('ProductId').value
     };
     console.log('Deleting Item...');
-    // fetch('https://apiapptrainingnewapp.azurewebsites.net/api/Products/{{prd.ProductId}}',{
-        // fetch(`https://apiapptrainingnewapp.azurewebsites.net/api/Products/${prd.ProductId}`,{
-            fetch('https://apiapptrainingnewapp.azurewebsites.net/api/Products/420',{
-        method:'DELETE',
-        body: JSON.stringify({prd}),
-        headers:{
-            'Content-Type':'application/json',
-            
-        }
-        
-    });
+    // fetch('https://apiapptrainingnewapp.azurewebsites.net/api/Products/{{prd.ProductId}}', {
+    // fetch(`https://apiapptrainingnewapp.azurewebsites.net/api/Products/${ProductRowId}`, {
+    // fetch('https://apiapptrainingnewapp.azurewebsites.net/api/Products/402', {
+        fetch('https://apiapptrainingnewapp.azurewebsites.net/api/Products/:ProductRowId', {
+        method: 'DELETE',
+        body: null,
+        headers: {
+            'Content-Type': 'application/json',
+            'Access-Control-Allow-Origin': '*',
+           'Access-Control-Allow-Origin':'http://127.0.0.1:5501/' 
+        },
+
+    })
     console.log(prd);
     console.log('Item Deleted..Click on GET to check');
-    
+
 }
