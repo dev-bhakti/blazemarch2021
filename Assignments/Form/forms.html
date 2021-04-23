@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Form Using JavaScript</title>
+</head>
+
+<body style="text-align: center;">
+    <h1 style="color:red;">Dynamic Form Using JavaScript</h1>
+    <!-- <button onclick="createEmployeeForm()">Click to Create Employee Form</button>
+    <p id="display_table"></p> -->
+
+    <button onclick="createProductForm()">Click to Create Product Form</button>
+    <p id="display_table"></p>
+
+    <script>
+       
+        var display1 = document.getElementById("display_table");
+        var brk = document.createElement("br");
+
+         // var display = document.getElementById("display_table");
+        // var count = 100;
+        // function createEmployeeForm() {
+        //     var form = document.createElement("form");
+        //     form.setAttribute("method", "post");
+        //     form.setAttribute("action", "https://reqres.in/api/users")
+
+        //     //create input element for employee id
+        //     var eid = document.createElement("input");
+        //     eid.setAttribute("type", "number");
+        //     eid.setAttribute("name", "empid");
+        //     eid.setAttribute("id", "empid");
+        //     eid.setAttribute("placeholder", "Enter Employee Id")
+
+        //     var ename = document.createElement("input");
+        //     ename.setAttribute("type", "text");
+        //     ename.setAttribute("name", "empname");
+        //     ename.setAttribute("id", "empname");
+        //     ename.setAttribute("placeholder", "Enter Employee Name")
+
+        //     var edept = document.createElement("input");
+        //     edept.setAttribute("type", "text");
+        //     edept.setAttribute("name", "empdept");
+        //     edept.setAttribute("id", "empdept");
+        //     edept.setAttribute("placeholder", "Enter Employee Department")
+
+        //     var esal = document.createElement("input");
+        //     esal.setAttribute("type", "number");
+        //     esal.setAttribute("name", "empsal");
+        //     esal.setAttribute("id", "empsal");
+        //     esal.setAttribute("placeholder", "Enter Employee Salary")
+
+        //     var edob = document.createElement("input");
+        //     edob.setAttribute("type", "date");
+        //     edob.setAttribute("name", "empdob");
+        //     edob.setAttribute("id", "empdob");
+        //     edob.setAttribute("placeholder", "Enter Employee Date of Birth")
+
+
+        //     var radioFemale = document.createElement("input");
+        //     radioFemale.setAttribute("type", "radio");
+        //     radioFemale.setAttribute("id", "radioFemale");
+
+        //     radioFemale.setAttribute("name", "Gender");
+        //     var lblYes = document.createElement("lable");
+        //     var textYes = document.createTextNode("Female");
+        //     lblYes.appendChild(textYes);
+
+        //     var radioMale = document.createElement("input");
+        //     radioMale.setAttribute("type", "radio");
+        //     radioMale.setAttribute("id", "radioMale");
+
+        //     radioMale.setAttribute("name", "Gender");
+        //     var lblNo = document.createElement("lable");
+        //     var textNo = document.createTextNode("Male");
+        //     lblNo.appendChild(textNo);
+
+        //     // create a submit button
+        //     var s = document.createElement("input");
+        //     s.setAttribute("type", "submit");
+        //     s.setAttribute("value", "Submit");
+
+
+        //     form.appendChild(eid);
+        //     form.appendChild(brk.cloneNode());
+
+        //     form.appendChild(ename);
+        //     form.appendChild(brk.cloneNode());
+
+        //     form.appendChild(edept);
+        //     form.appendChild(brk.cloneNode());
+
+        //     form.appendChild(esal);
+        //     form.appendChild(brk.cloneNode());
+
+        //     form.appendChild(edob);
+        //     form.appendChild(brk.cloneNode());
+
+        //     form.appendChild(radioFemale);
+        //     form.appendChild(lblYes);
+
+        //     form.appendChild(radioMale);
+        //     form.appendChild(lblNo);
+        //     form.appendChild(brk.cloneNode());
+
+        //     form.appendChild(s);
+        //     form.appendChild(brk.cloneNode());
+
+        //     document.getElementsByTagName("body")[0].
+        //         appendChild(form);
+
+        // }
+
+        function createProductForm() {
+            var prodForm = document.createElement("form");
+            prodForm.setAttribute("method", "post");
+            prodForm.setAttribute("action", "https://reqres.in/api/users")
+
+            //create input element for employee id
+            var pid = document.createElement("input");
+            pid.setAttribute("type", "number");
+            pid.setAttribute("name", "product_id");
+            pid.setAttribute("id", "prodid");
+            pid.setAttribute("placeholder", "Enter Product Id")
+            var pid_lbl = document.createElement("lable");
+            var text1 = document.createTextNode("Product ID: ");
+            pid_lbl.appendChild(text1);
+
+            var pname = document.createElement("input");
+            pname.setAttribute("type", "text");
+            pname.setAttribute("name", "product_name");
+            pname.setAttribute("id", "prodname");
+            pname.setAttribute("placeholder", "Enter Product Name")
+            var pname_lbl = document.createElement("lable");
+            var text2 = document.createTextNode("Product Name: ");
+            pname_lbl.appendChild(text2);
+
+            // var mname = document.createElement("input");
+            // mname.setAttribute("type", "text");
+            // mname.setAttribute("name", "manu_name");
+            // mname.setAttribute("id", "manu_name");
+            // mname.setAttribute("placeholder", "Enter Manufacturer ")
+
+            var manufacturer = document.createElement('select');
+            manufacturer.setAttribute("name", "manufacturer_name");
+            manufacturer.setAttribute("id", "mname");
+            var man_lbl = document.createElement("lable");
+            var text3 = document.createTextNode("Manufacturer");
+            man_lbl.appendChild(text3);
+
+            var options = new Array();
+            for ( var i = 0; i < Array.length; i++ ){
+                options.push(new Option("IBM"));
+                options.push(new Option("TATA"));
+                options.push(new Option("PARLE"));
+            }
+            options[0].setAttribute("selected", "selected");
+            for ( var option in options ){
+                manufacturer.appendChild(options[option]);
+            }
+
+            // var cname = document.createElement("input");
+            // cname.setAttribute("type", "text");
+            // cname.setAttribute("name", "cat_name");
+            // cname.setAttribute("id", "cat_name");
+            // cname.setAttribute("placeholder", "Enter Category")
+
+            var category = document.createElement('select');
+            category.setAttribute("name", "category_name");
+            category.setAttribute("id", "cname");
+            var cat_lbl = document.createElement("lable");
+            var text4 = document.createTextNode("Category");
+            cat_lbl.appendChild(text4);
+
+            var cat_options = new Array();
+            for ( var i = 0; i < Array.length; i++ ){
+                cat_options.push(new Option("Electrical"));
+                cat_options.push(new Option("Electronics"));
+                cat_options.push(new Option("Food"));
+            }
+            cat_options[0].setAttribute("selected", "selected");
+            for ( var op in cat_options ){
+                category.appendChild(cat_options[op]);
+            }
+
+            var desc = document.createElement("input");
+            desc.setAttribute("type", "text");
+            desc.setAttribute("name", "description");
+            desc.setAttribute("id", "des");
+            desc.setAttribute("placeholder", "Enter Description")
+            var des_lbl = document.createElement("lable");
+            var text4 = document.createTextNode("Description: ");
+            des_lbl.appendChild(text4);
+
+            var prod_manufacture_date = document.createElement("input");
+            prod_manufacture_date.setAttribute("type", "date");
+            prod_manufacture_date.setAttribute("name", "productManufacture_date");
+            prod_manufacture_date.setAttribute("id", "productManufacture_date");
+            prod_manufacture_date.setAttribute("placeholder", "Enter Product Manufacture Date");
+            var date_lbl = document.createElement("lable");
+            var text5 = document.createTextNode("Manufacture Date: ");
+            date_lbl.appendChild(text5);
+
+
+            var price = document.createElement("input");
+            price.setAttribute("type", "number");
+            price.setAttribute("name", "price");
+            price.setAttribute("id", "price");
+            price.setAttribute("placeholder", "Enter Price")
+            var price_lbl = document.createElement("lable");
+            var text6 = document.createTextNode("Price: ");
+            price_lbl.appendChild(text6);
+            
+           
+            // create a submit button
+            var s1 = document.createElement("input");
+            s1.setAttribute("type", "submit");
+            s1.setAttribute("value", "Submit");
+
+            prodForm.appendChild(pid_lbl);
+            prodForm.appendChild(pid);
+            prodForm.appendChild(brk.cloneNode());
+            prodForm.appendChild(brk.cloneNode());
+
+            prodForm.appendChild(pname_lbl);
+            prodForm.appendChild(pname);
+            prodForm.appendChild(brk.cloneNode());
+            prodForm.appendChild(brk.cloneNode());
+
+            // prodForm.appendChild(mname);
+            // prodForm.appendChild(brk.cloneNode());
+            prodForm.appendChild(man_lbl);
+            prodForm.appendChild(manufacturer);
+            prodForm.appendChild(brk.cloneNode());
+            prodForm.appendChild(brk.cloneNode());
+
+            // prodForm.appendChild(cname);
+            // prodForm.appendChild(brk.cloneNode());
+            prodForm.appendChild(cat_lbl);
+            prodForm.appendChild(category);
+            prodForm.appendChild(brk.cloneNode());
+            prodForm.appendChild(brk.cloneNode());
+
+            prodForm.appendChild(des_lbl);
+            prodForm.appendChild(desc);
+            prodForm.appendChild(brk.cloneNode());
+            prodForm.appendChild(brk.cloneNode());
+
+            prodForm.appendChild(date_lbl);
+            prodForm.appendChild(prod_manufacture_date);
+            prodForm.appendChild(brk.cloneNode());
+            prodForm.appendChild(brk.cloneNode());
+
+            prodForm.appendChild(price_lbl);
+            prodForm.appendChild(price);
+            prodForm.appendChild(brk.cloneNode());
+            prodForm.appendChild(brk.cloneNode());
+
+            prodForm.appendChild(s1);
+            prodForm.appendChild(brk.cloneNode());
+            prodForm.appendChild(brk.cloneNode());
+
+            document.getElementsByTagName("body")[0].
+                appendChild(prodForm);
+                console.log(prodForm.value);
+
+        }
+    </script>
+</body>
+
+</html>
