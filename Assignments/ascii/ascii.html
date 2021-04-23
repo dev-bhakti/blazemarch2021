@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-   <link rel="stylesheet" href="/blazemarch2021/node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/blazemarch2021/node_modules/bootstrap/dist/css/bootstrap.min.css">
     <style>
         .container {
             display: flex;
@@ -25,37 +25,37 @@
             <button onclick="encrypt()" class="btn btn-success">Encrypt</button>
             <button onclick="decrypt()" class="btn btn-info">Decrypt</button>
         </div>
-       <div>
-           <label>Encrypted Data: </label>
+        <div>
+            <label>Encrypted Data: </label>
             <h1 id="op"></h1>
-       </div>
-       <div>
-        <label>Deccrypted Data: </label>
-        <h1 id="op1"></h1>
-       </div>
+        </div>
+        <div>
+            <label>Deccrypted Data: </label>
+            <h1 id="op1"></h1>
+        </div>
     </div>
     <script type="text/javascript">
         function encrypt() {
             var input = document.getElementById('ip').value;
             console.log('in encrypt function');
-            var encrypt=""; 
-            for(var i=0;i<input.length; i++) { 
-                encrypt+=input.charCodeAt(i); 
-	            if (i<input.length-1) encrypt+=","; 
-            } 
-            document.getElementById('op').innerText = encrypt;   
+            var encrypt = "";
+            for (var i = 0; i < input.length; i++) {
+                encrypt += input.charCodeAt(i);
+                if (i < input.length - 1) encrypt += ",";
+            }
+            document.getElementById('op').innerText = encrypt;
         }
 
-        function decrypt(input1) {
+        //to decrypt, paste the value of encrypt in textbox
+        function decrypt() {
             var input1 = document.getElementById('ip').value;
             var input2 = input1.split(',');
             console.log('in decrypt function');
-            for(var i=1;i<input2.length; i++){
-                String.fromCharCode(input2[i]);
-                document.getElementById('op1').innerText =String.fromCharCode(input2[i]);
+            let output = ''
+            for (var i = 0; i < input2.length; i++) {
+                output += String.fromCharCode(input2[i]);
             }
-            
-            return String.fromCharCode(input2)
+            document.getElementById('op1').innerText = output
         }
 
     </script>
