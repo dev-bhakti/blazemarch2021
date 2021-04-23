@@ -18,8 +18,8 @@ class UIGenerator {
         table+=`<th><input class="checkbox" style="margin-left:32%; margin-top:23%;" type="checkbox" id="select_all" onclick="selectAllCheckboxes(this)"><br>Select All </th>`
       
         for(var head = 0; head < headers.length; head++){
-            table+= `<th onclick= 'sortTable(0)'>${headers[head]}</th>`; 
-            // table+= "<th>"+headers[head]+ "<br><span style='cursor: pointer;' onclick= 'sortTable(1)'>&#9650 </span>" +"</th>";
+            // table+= `<th onclick= 'sortTable(0)'>${headers[head]}</th>`; 
+            table+= "<th>"+headers[head]+ "<br><span style='cursor: pointer;' onclick= 'sortTable(1)'>&#9650 </span>" +"</th>";
         } 
 
         if( Edit_Row == true && Delete_Row == true){
