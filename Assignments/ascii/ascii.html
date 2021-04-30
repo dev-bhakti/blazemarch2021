@@ -41,7 +41,8 @@
             var encrypt = "";
             for (var i = 0; i < input.length; i++) {
                 encrypt += input.charCodeAt(i);
-                if (i < input.length - 1) encrypt += ",";
+                if (i < input.length - 1) 
+                encrypt += ",";
             }
             document.getElementById('op').innerText = encrypt;
         }

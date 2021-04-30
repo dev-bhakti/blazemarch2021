@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="checkbox"></div>
+    <input type="submit" id="submit">
+    <h1 id="show"></h1>
+    <script>
+        var products = ["Laptop", "Mobile", "Keyboard", "Mouse", "Cadbury", "Table"];
+        var check = document.getElementById("checkbox");
+        var submit = document.getElementById("submit");
+
+        for (var i = 0; i < products.length; i++) {
+            var checkBox = document.createElement("input");
+            var DataTextField = document.createElement("label");
+            checkBox.type = "checkbox";
+            checkBox.value = products[i];
+            check.appendChild(checkBox);
+            check.appendChild(DataTextField);
+            DataTextField.appendChild(document.createTextNode(products[i]));
+
+        }
+
+        var checkboxes = document.querySelectorAll("input[type=checkbox]");
+
+        function getChecked() {
+            var checked = [];
+
+            for (var i = 0; i < checkboxes.length; i++) {
+                var checkbox = checkboxes[i];
+                if (checkbox.checked) checked.push(checkbox.value);
+            }
+            document.getElementById("show").innerText=checked;
+            return checked;
+            
+            
+        }
+
+        submit.addEventListener("click", function () {
+            var checked = getChecked();
+            console.log(checked);
+        });
+
+       
+    </script>
+</body>
+
+</html>

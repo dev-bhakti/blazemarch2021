@@ -1,20 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>Display Data</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <link rel="stylesheet" href="/blazemarch2021/node_modules/bootstrap/dist/css/bootstrap.min.css">
-        <link rel="stylesheet" href="/blazemarch2021/node_modules/bootstrap/dist/js/bootstrap.min.js">
-        <script src="./uigenerate_table.js"></script>
-        <script src="./table.js"></script>
-        <script>
-            window.onload= showTable
-        </script>
-    </head>
-    <body>
-    <div id="myTable"></div>
-    <div id='pagination' style="padding-left: 85%;"></div>
-    </body>
+
+<head>
+    <title>Display Data</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="./../../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <script src="./uigenerate_table.js"></script>
+    <script src="./table.js"></script>
+    <script>
+        window.onload = showTable
+    </script>
+</head>
+<body>
+    <form>
+        <div class="form-group">
+            <div id="myTable"></div>
+            <div id="pagination" style="padding-left: 85%;"></div>        
+            <div class="form-group"  style="padding-left: 85%; margin-top: 5px;">
+                <label>Page Size</label>   
+                <select onclick="getPageSize(this.value)">
+                    <option value='5'>5</option>
+                    <option value='10'>10</option>
+                    <option value='15'>15</option>
+                    <option value='20'>20</option>
+                </select>
+        </div>
+        </div>
+    </form>
+</body>
 </html>

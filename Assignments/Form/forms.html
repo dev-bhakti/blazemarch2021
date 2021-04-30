@@ -10,8 +10,7 @@
 
 <body style="text-align: center;">
     <h1 style="color:red;">Dynamic Form Using JavaScript</h1>
-    <!-- <button onclick="createEmployeeForm()">Click to Create Employee Form</button>
-    <p id="display_table"></p> -->
+
 
     <button onclick="createProductForm()">Click to Create Product Form</button>
     <p id="display_table"></p>
@@ -21,99 +20,7 @@
         var display1 = document.getElementById("display_table");
         var brk = document.createElement("br");
 
-         // var display = document.getElementById("display_table");
-        // var count = 100;
-        // function createEmployeeForm() {
-        //     var form = document.createElement("form");
-        //     form.setAttribute("method", "post");
-        //     form.setAttribute("action", "https://reqres.in/api/users")
-
-        //     //create input element for employee id
-        //     var eid = document.createElement("input");
-        //     eid.setAttribute("type", "number");
-        //     eid.setAttribute("name", "empid");
-        //     eid.setAttribute("id", "empid");
-        //     eid.setAttribute("placeholder", "Enter Employee Id")
-
-        //     var ename = document.createElement("input");
-        //     ename.setAttribute("type", "text");
-        //     ename.setAttribute("name", "empname");
-        //     ename.setAttribute("id", "empname");
-        //     ename.setAttribute("placeholder", "Enter Employee Name")
-
-        //     var edept = document.createElement("input");
-        //     edept.setAttribute("type", "text");
-        //     edept.setAttribute("name", "empdept");
-        //     edept.setAttribute("id", "empdept");
-        //     edept.setAttribute("placeholder", "Enter Employee Department")
-
-        //     var esal = document.createElement("input");
-        //     esal.setAttribute("type", "number");
-        //     esal.setAttribute("name", "empsal");
-        //     esal.setAttribute("id", "empsal");
-        //     esal.setAttribute("placeholder", "Enter Employee Salary")
-
-        //     var edob = document.createElement("input");
-        //     edob.setAttribute("type", "date");
-        //     edob.setAttribute("name", "empdob");
-        //     edob.setAttribute("id", "empdob");
-        //     edob.setAttribute("placeholder", "Enter Employee Date of Birth")
-
-
-        //     var radioFemale = document.createElement("input");
-        //     radioFemale.setAttribute("type", "radio");
-        //     radioFemale.setAttribute("id", "radioFemale");
-
-        //     radioFemale.setAttribute("name", "Gender");
-        //     var lblYes = document.createElement("lable");
-        //     var textYes = document.createTextNode("Female");
-        //     lblYes.appendChild(textYes);
-
-        //     var radioMale = document.createElement("input");
-        //     radioMale.setAttribute("type", "radio");
-        //     radioMale.setAttribute("id", "radioMale");
-
-        //     radioMale.setAttribute("name", "Gender");
-        //     var lblNo = document.createElement("lable");
-        //     var textNo = document.createTextNode("Male");
-        //     lblNo.appendChild(textNo);
-
-        //     // create a submit button
-        //     var s = document.createElement("input");
-        //     s.setAttribute("type", "submit");
-        //     s.setAttribute("value", "Submit");
-
-
-        //     form.appendChild(eid);
-        //     form.appendChild(brk.cloneNode());
-
-        //     form.appendChild(ename);
-        //     form.appendChild(brk.cloneNode());
-
-        //     form.appendChild(edept);
-        //     form.appendChild(brk.cloneNode());
-
-        //     form.appendChild(esal);
-        //     form.appendChild(brk.cloneNode());
-
-        //     form.appendChild(edob);
-        //     form.appendChild(brk.cloneNode());
-
-        //     form.appendChild(radioFemale);
-        //     form.appendChild(lblYes);
-
-        //     form.appendChild(radioMale);
-        //     form.appendChild(lblNo);
-        //     form.appendChild(brk.cloneNode());
-
-        //     form.appendChild(s);
-        //     form.appendChild(brk.cloneNode());
-
-        //     document.getElementsByTagName("body")[0].
-        //         appendChild(form);
-
-        // }
-
+        
         function createProductForm() {
             var prodForm = document.createElement("form");
             prodForm.setAttribute("method", "post");
